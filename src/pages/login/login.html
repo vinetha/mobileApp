@@ -1,0 +1,36 @@
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <h1 center text-center>Food App</h1>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-grid >
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" #email></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" #password></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col center text-center>
+          <button ion-button full color="lightText" (click)="login();">Log in</button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <p center text-center>OR</p>
+</ion-grid>
+<ion-grid padding>
+      <button ion-button full style="background: #3b5998;" (click)="loginAction()">Login with Facebook</button>
+</ion-grid> 
+<ion-grid>
+    <ion-col center text-center>
+      <h6>Don't have an account? <span><a (click)="redirectToSignup()">Signup</a></span></h6>
+    </ion-col>
+</ion-grid>
+
