@@ -1,0 +1,24 @@
+@mixin common-header{
+    .header{
+        &:after{
+       background-image: none;
+        }
+       background: $bg-orange; 
+       color: $white;
+      button{
+       background:none;
+       padding-left: 0;
+       .icon{
+           padding: 10px 0 0 0;
+           color: $white;
+       }
+   }
+   .page-title{
+       font-size: 1.25rem;
+       text-transform: uppercase;
+       font-family: "OpenSans";
+       font-weight: bold;
+       letter-spacing: 0.025em;
+   } 
+   }
+}

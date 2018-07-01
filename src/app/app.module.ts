@@ -12,6 +12,10 @@ import { SignupPage } from '../pages/signup/signup';
 import { SignupPageModule } from '../pages/signup/signup.module';
 import { HomePageModule } from '../pages/home/home.module';
 import { LoginPageModule } from '../pages/login/login.module';
+import { DashboardPage } from '../pages/dashboard/dashboard';
+import { DashboardPageModule } from '../pages/dashboard/dashboard.module';
+import { FoodmenuPage } from '../pages/foodmenu/foodmenu';
+import { FoodmenuPageModule } from '../pages/foodmenu/foodmenu.module';
 
 
 @NgModule({
@@ -23,6 +27,8 @@ import { LoginPageModule } from '../pages/login/login.module';
     SignupPageModule,
     HomePageModule,
     LoginPageModule,
+    DashboardPageModule,
+    FoodmenuPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -30,7 +36,9 @@ import { LoginPageModule } from '../pages/login/login.module';
     MyApp,
     HomePage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    DashboardPage,
+    FoodmenuPage,
   ],
   providers: [
     StatusBar,

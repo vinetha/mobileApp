@@ -1,0 +1,152 @@
+<ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-1>
+        <button icon-only>
+          <ion-icon name="arrow-back" class="no-padding"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-11>
+        <ion-row>
+          <ion-col col-12 class="page-title"> Set Delivery Location</ion-col>
+          <ion-col col-12>
+            <ion-searchbar placeholder="Search for Area, Restuarent ..." class="search-wrapper"></ion-searchbar>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+<ion-content class="content-section">
+  <ion-grid>
+    <ion-row class="padding-vertical-10">
+      <ion-col col-6>
+        <span>346</span> Restaurents</ion-col>
+      <ion-col col-6 text-right>
+        <ion-select>
+          <ion-option value="Relevance" selected>Relevance</ion-option>
+          <ion-option value="Near by">Near by</ion-option>
+          <ion-option value="Delivery Time">Delivery Time</ion-option>
+          <ion-option value="Rating">Rating</ion-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+    <ion-list>
+
+      <button ion-item [navPush]="nextPage">
+        <ion-thumbnail item-start>
+          <img src="../assets/imgs/1.png">
+        </ion-thumbnail>
+        <h2>Restaurant 1</h2>
+        <p>Lorem ipsum dolor sit amet</p>
+        <div class="text-small">
+          <span item-start>Free delivery</span>
+          <span item-end>45 mins</span>
+        </div>
+        <div clear item-end class="rating">
+          <span text-right>
+            <ion-icon name="star">
+              <span text-right class="value text-small"> 4.2</span>
+            </ion-icon>
+          </span>
+          <span class="text-small">321 reviews</span>
+        </div>
+      </button>
+      <button ion-item>
+        <ion-thumbnail item-start>
+          <img src="../assets/imgs/2.png">
+        </ion-thumbnail>
+        <h2>Restaurant 2</h2>
+        <p>Lorem ipsum dolor sit amet</p>
+        <div class="text-small">
+          <span item-start>Free delivery</span>
+          <span item-end>30 mins</span>
+        </div>
+        <div clear item-end class="rating">
+          <span text-right>
+            <ion-icon name="star">
+              <span text-right class="value text-small"> 3.25</span>
+            </ion-icon>
+          </span>
+          <span class="text-small">321 reviews</span>
+        </div>
+      </button>
+      <button ion-item>
+        <ion-thumbnail item-start>
+          <img src="../assets/imgs/3.png">
+        </ion-thumbnail>
+        <h2>Restaurant 3</h2>
+        <p>Lorem ipsum dolor sit amet</p>
+        <div class="text-small">
+          <span item-start>Free delivery</span>
+          <span item-end>20 mins</span>
+        </div>
+        <div clear item-end class="rating">
+          <span text-right>
+            <ion-icon name="star">
+              <span text-right class="value text-small"> 4</span>
+            </ion-icon>
+          </span>
+          <span class="text-small">69 reviews</span>
+        </div>
+      </button>
+      <button ion-item>
+        <ion-thumbnail item-start>
+          <img src="../assets/imgs/4.png">
+        </ion-thumbnail>
+        <h2>Restaurant 4</h2>
+        <p>Lorem ipsum dolor sit amet</p>
+        <div class="text-small">
+          <span item-start>Free delivery</span>
+          <span item-end>45 mins</span>
+        </div>
+        <div clear item-end class="rating">
+          <span text-right>
+            <ion-icon name="star">
+              <span text-right class="value text-small"> 3.8</span>
+            </ion-icon>
+          </span>
+          <span class="text-small">73 reviews</span>
+        </div>
+      </button>
+      <button ion-item>
+        <ion-thumbnail item-start>
+          <img src="../assets/imgs/1.png">
+        </ion-thumbnail>
+        <h2>Restaurant 5</h2>
+        <p>Lorem ipsum dolor sit amet</p>
+        <div class="text-small">
+          <span item-start>Free delivery</span>
+          <span item-end>30 mins</span>
+        </div>
+        <div clear item-end class="rating">
+          <span text-right>
+            <ion-icon name="star">
+              <span text-right class="value text-small"> 3.75</span>
+            </ion-icon>
+          </span>
+          <span class="text-small">210 reviews</span>
+        </div>
+      </button>
+      <button ion-item>
+        <ion-thumbnail item-start>
+          <img src="../assets/imgs/2.png">
+        </ion-thumbnail>
+        <h2>Restaurant 6</h2>
+        <p>Lorem ipsum dolor sit amet</p>
+        <div class="text-small">
+          <span item-start>Free delivery</span>
+          <span item-end>45 mins</span>
+        </div>
+        <div clear item-end class="rating">
+          <span text-right>
+            <ion-icon name="star">
+              <span text-right class="value text-small"> 4</span>
+            </ion-icon>
+          </span>
+          <span class="text-small">127 reviews</span>
+        </div>
+      </button>
+    </ion-list>
+  </ion-grid>
+</ion-content>
