@@ -4,6 +4,9 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Facebook } from "@ionic-native/facebook";
+import { HttpClientModule } from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
+import { SimpleGlobal } from 'ng2-simple-global';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -20,10 +23,12 @@ import { LoginPageModule } from '../pages/login/login.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     SignupPageModule,
     HomePageModule,
     LoginPageModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -36,6 +41,7 @@ import { LoginPageModule } from '../pages/login/login.module';
     StatusBar,
     Facebook,
     SplashScreen,
+    SimpleGlobal,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
