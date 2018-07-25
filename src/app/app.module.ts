@@ -16,7 +16,7 @@ import { DashboardPage } from '../pages/dashboard/dashboard';
 import { DashboardPageModule } from '../pages/dashboard/dashboard.module';
 import { FoodmenuPage } from '../pages/foodmenu/foodmenu';
 import { FoodmenuPageModule } from '../pages/foodmenu/foodmenu.module';
-
+import { Geolocation } from '@ionic-native/geolocation';
 
 @NgModule({
   declarations: [
@@ -44,6 +44,7 @@ import { FoodmenuPageModule } from '../pages/foodmenu/foodmenu.module';
     StatusBar,
     Facebook,
     SplashScreen,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

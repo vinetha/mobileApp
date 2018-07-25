@@ -22,4 +22,8 @@ nextPage = FoodmenuPage;
     console.log('ionViewDidLoad DashboardPage');
   }
 
+  redirectMap(){
+    this.navCtrl.setRoot('HomePage');
+  }
+
 }

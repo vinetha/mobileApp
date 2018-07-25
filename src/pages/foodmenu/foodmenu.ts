@@ -20,5 +20,4 @@ export class FoodmenuPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad FoodmenuPage');
   }
-
 }

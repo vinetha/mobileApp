@@ -1,6 +1,17 @@
+<ion-content>
+    <ion-row>
+        <p style="padding-left: 20px;"><b>Set delivery location</b></p>
+    </ion-row>
+    <div id="map"></div>
 <ion-grid>
-    <h1>Dashboard Screen</h1>
-    <h2>Welcome</h2>
-    {{name}}
-    <img src="{{imageString}}" style="height:50px;width:50px"/> 
+    <!-- <ion-item> -->
+        <ion-label color="primary" stacked>Address</ion-label>
+        <input type="text" id="address">
+    <!-- </ion-item> -->
+    <!-- <ion-item> -->
+        <ion-col center text-center>
+        <button ion-button round (click)="redirectDashboard()">Save Address and Proceed</button>
+        </ion-col>
+    <!-- </ion-item> -->
 </ion-grid>
+</ion-content>
