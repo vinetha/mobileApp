@@ -4,6 +4,9 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Facebook } from "@ionic-native/facebook";
+import { HttpClientModule } from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
+import { SimpleGlobal } from 'ng2-simple-global';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -24,12 +27,14 @@ import { Geolocation } from '@ionic-native/geolocation';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     SignupPageModule,
     HomePageModule,
     LoginPageModule,
     DashboardPageModule,
     FoodmenuPageModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -45,6 +50,7 @@ import { Geolocation } from '@ionic-native/geolocation';
     Facebook,
     SplashScreen,
     Geolocation,
+    SimpleGlobal,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

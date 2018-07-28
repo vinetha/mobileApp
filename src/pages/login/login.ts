@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
+import { LoginService } from './login.service';
+import { StorageService } from '../../utils/storage.service';
 
 /**
  * Generated class for the LoginPage page.
@@ -13,17 +15,107 @@ import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
+  providers: [LoginService, StorageService]
 })
 export class LoginPage {
+  public mobileNo = '';
+  public otp = '';
+  public isOtpValidation = false;
+  public payload = {
+    mobileNo: ''
+  }
+  loading: any;
+  constructor(public navCtrl: NavController, public storage: StorageService, 
+    public navParams: NavParams, public loginService: LoginService, public loadingCtrl: LoadingController) {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public fb: Facebook) {
+      this.loading = this.loadingCtrl.create({
+        spinner: 'dots'
+      });
+    
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
+  validateMobile(){
+    const load = this.loadingCtrl.create({
+      spinner: 'dots'
+    });
+   load.present();
+    try {
+      this.loginService.mobileNoValidate(this.mobileNo)
+        .subscribe(resp => {
+          //console.log(resp, "res");
+          load.dismiss()
+          this.isOtpValidation = true;
+        },
+          error => {
+            load.dismiss();
+            console.log(error, "error");
+          })
+    } catch (e) {
+      load.dismiss();
+      console.log(e);
+    }
+    
+  }
 
-  loginAction()
+  reSendOtp() {
+    const load = this.loadingCtrl.create({
+      spinner: 'dots',
+      content: 'Resending the OTP..'
+    });
+
+    load.present();
+    try {
+      this.loginService.otpValidation(this.mobileNo, this.otp)
+        .subscribe(resp => { 
+          this.otp = '';
+          load.dismiss();
+        },
+          error => {
+            load.dismiss();
+            console.log(error, "error");
+          })
+    } catch (e) {
+      load.dismiss();
+      console.log(e);
+    }
+
+  }
+
+  validateOTP(){
+    const load = this.loadingCtrl.create({
+      spinner: 'dots'
+    });
+   load.present();
+    try {
+      console.log(this.otp);
+      this.loginService.otpValidation(this.mobileNo, this.otp)
+        .subscribe(resp => { 
+          if(this.otp == '1234'){
+            
+            this.payload.mobileNo = this.mobileNo;
+            
+            this.redirectToSignup();
+
+          }else{
+            this.otp = '';
+            alert('Invalid OTP');
+          }
+          load.dismiss();
+        },
+          error => {
+            load.dismiss();
+            console.log(error, "error");
+          })
+    } catch (e) {
+      load.dismiss();
+      console.log(e);
+    }
+    
+  }
+ /* loginAction()
   {
     console.log("Inside function")
       // Login with permissions
@@ -63,13 +155,14 @@ export class LoginPage {
       .catch((e) => {
           console.log('Error logging into Facebook', e);
       });
-  }
+  }*/
   
   login(){
     console.log("Inside login")
   }
 
   redirectToSignup(){
-    this.navCtrl.push('SignupPage');
+    
+    this.navCtrl.push('SignupPage', this.payload);
   }
 }

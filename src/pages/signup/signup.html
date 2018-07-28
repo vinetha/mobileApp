@@ -5,32 +5,39 @@
     </ion-col>
   </ion-row>
 </ion-grid>
-
-<ion-grid >
+<form (ngSubmit)="saveProfile()" #signUp="ngForm">
+  <ion-grid >
     <ion-item>
         <ion-label floating>Name</ion-label>
-        <ion-input type="password" #password></ion-input>
+        <ion-input type="text" name="name" [(ngModel)]="signUpForm.name" required></ion-input>
+        
       </ion-item>
     <ion-item>
       <ion-label floating>Email</ion-label>
-      <ion-input type="text" #email></ion-input>
+      <ion-input type="text" name="email" [(ngModel)]="signUpForm.email" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label floating>Mobile Number</ion-label>
-      <ion-input type="number" #password></ion-input>
+      <ion-input type="text" name="mobileNo" [(ngModel)]="signUpForm.mobileNo" [disabled]="true" ></ion-input>
     </ion-item>
     <ion-item>
       <ion-label floating>Password</ion-label>
-      <ion-input type="password" #password></ion-input>
+      <ion-input type="password" name="password" [(ngModel)]="signUpForm.password" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Confirm Password</ion-label>
+      <ion-input type="password" name="confirmPassword" [(ngModel)]="signUpForm.confirmPassword" required ></ion-input>
     </ion-item>
     <ion-item>
       <ion-row>
         <ion-col center text-center>
-          <button ion-button full color="lightText" (click)="signup()">Signup</button>
+          <button ion-button full color="lightText"  type="submit" [disabled]="!signUp.form.valid">Save</button>
         </ion-col>
       </ion-row>
     </ion-item>
 
 </ion-grid>
 
+
+</form>
 
