@@ -33,12 +33,12 @@
     </ion-row>
     <ion-list>
 
-      <button ion-item [navPush]="nextPage">
+      <button ion-item [navPush]="nextPage" *ngFor='let restaurant of restaurantDetails' >
         <ion-thumbnail item-start>
-          <img src="../assets/imgs/1.png">
+          <img src={{img}}>
         </ion-thumbnail>
-        <h2>Restaurant 1</h2>
-        <p>Lorem ipsum dolor sit amet</p>
+        <h2>{{restaurant.Name}}</h2>
+        <p>{{restaurant.Address}}</p>
         <div class="text-small">
           <span item-start>Free delivery</span>
           <span item-end>45 mins</span>
@@ -52,9 +52,10 @@
           <span class="text-small">321 reviews</span>
         </div>
       </button>
-      <button ion-item>
+
+     <!-- <button ion-item>
         <ion-thumbnail item-start>
-          <img src="../assets/imgs/2.png">
+          <img src={{img}}>
         </ion-thumbnail>
         <h2>Restaurant 2</h2>
         <p>Lorem ipsum dolor sit amet</p>
@@ -73,7 +74,7 @@
       </button>
       <button ion-item>
         <ion-thumbnail item-start>
-          <img src="../assets/imgs/3.png">
+          <img src={{img}}>
         </ion-thumbnail>
         <h2>Restaurant 3</h2>
         <p>Lorem ipsum dolor sit amet</p>
@@ -92,7 +93,7 @@
       </button>
       <button ion-item>
         <ion-thumbnail item-start>
-          <img src="../assets/imgs/4.png">
+          <img src={{img}}>
         </ion-thumbnail>
         <h2>Restaurant 4</h2>
         <p>Lorem ipsum dolor sit amet</p>
@@ -111,7 +112,7 @@
       </button>
       <button ion-item>
         <ion-thumbnail item-start>
-          <img src="../assets/imgs/1.png">
+          <img src="{{img}}">
         </ion-thumbnail>
         <h2>Restaurant 5</h2>
         <p>Lorem ipsum dolor sit amet</p>
@@ -130,7 +131,7 @@
       </button>
       <button ion-item>
         <ion-thumbnail item-start>
-          <img src="../assets/imgs/2.png">
+          <img src="{{img}}">
         </ion-thumbnail>
         <h2>Restaurant 6</h2>
         <p>Lorem ipsum dolor sit amet</p>
@@ -145,8 +146,8 @@
             </ion-icon>
           </span>
           <span class="text-small">127 reviews</span>
-        </div>
-      </button>
+        </div> 
+      </button> -->
     </ion-list>
   </ion-grid>
 </ion-content>

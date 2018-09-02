@@ -20,6 +20,7 @@ import { DashboardPageModule } from '../pages/dashboard/dashboard.module';
 import { FoodmenuPage } from '../pages/foodmenu/foodmenu';
 import { FoodmenuPageModule } from '../pages/foodmenu/foodmenu.module';
 import { Geolocation } from '@ionic-native/geolocation';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     DashboardPageModule,
     FoodmenuPageModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

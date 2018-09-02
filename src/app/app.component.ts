@@ -8,6 +8,7 @@ import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
 import { StorageService } from '../utils/storage.service';
 import { Storage } from '@ionic/storage';
+import { DashboardPage } from '../pages/dashboard/dashboard';
 
 @Component({
   templateUrl: 'app.html',
@@ -20,6 +21,7 @@ export class MyApp {
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private sg: SimpleGlobal, private storage: Storage) {
     platform.ready().then(() => {
       this.storage.get('isFirstimeUser').then((val) => {
+        val = null
         if(!val){
           this.rootPage = LoginPage;
         }
@@ -31,13 +33,14 @@ export class MyApp {
 
           });
           
-        }
+        } 
+
       });
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
-    });
+   });
   }
 }
 
